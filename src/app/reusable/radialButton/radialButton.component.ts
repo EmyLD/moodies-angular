@@ -1,5 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component, Input } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-radialButton',
@@ -10,4 +11,13 @@ import { Component, Input } from '@angular/core';
 })
 export class ButtonComponent {
   @Input() label: string = '';
+  @Input() route: string = '';
+
+  constructor(private router: Router) {}
+
+  navigate() {
+    if (this.route) {
+      this.router.navigate([this.route]);
+    }
+  }
 }
