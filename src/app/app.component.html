@@ -1,14 +1,33 @@
-<main class="main">
-  <h1>Moodies</h1>
-  <app-particules> </app-particules>
-</main>
+<div
+  class="min-h-screen flex flex-col items-center justify-center bg-white text-[#A7C7A7] p-4 overflow-hidden relative"
+>
+  <div
+    *ngFor="let particle of particles"
+    class="particle"
+    [ngStyle]="{
+      left: particle.left,
+      top: particle.top,
+      animationDuration: particle.animationDuration,
+      animationDelay: particle.animationDelay,
+      transformOrigin: particle.transformOrigin
+    }"
+  ></div>
+  <main class="text-center max-w-2xl mx-auto z-10">
+    <h1 class="text-5xl mb-4 text-[#FADADD]">Moodies</h1>
+    <p class="text-xl mb-8 text-[#A7C7A7]">
+      Votre espace personnel pour capturer vos pensées quotidiennes et nourrir
+      votre introspection.
+    </p>
+    <button
+      class="bg-[#FADADD] hover:bg-[#A7C7A7] text-white hover:text-[#FADADD] transition-colors duration-300"
+      routerLink="/write"
+    >
+      Commencer à écrire
+    </button>
+  </main>
+  <footer class="mt-16 text-sm text-[#A7C7A7] z-10">
+    <p>Prenez un moment chaque jour pour vous connecter avec vous-même.</p>
+  </footer>
+</div>
 
-<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
-<!-- * * * * * * * * * * * The content above * * * * * * * * * * * * -->
-<!-- * * * * * * * * * * is only a placeholder * * * * * * * * * * * -->
-<!-- * * * * * * * * * * and can be replaced.  * * * * * * * * * * * -->
-<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
-<!-- * * * * * * * * * * End of Placeholder  * * * * * * * * * * * * -->
-<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
-
-<router-outlet />
+<router-outlet></router-outlet>
