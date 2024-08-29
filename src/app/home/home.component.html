@@ -1,0 +1,30 @@
+<div
+  class="min-h-screen flex flex-col items-center justify-center bg-white text-soft-green p-4 overflow-hidden relative"
+>
+  <div
+    *ngFor="let particle of particles"
+    class="particle"
+    [ngStyle]="{
+      left: particle.left,
+      top: particle.top,
+      animationDuration: particle.animationDuration,
+      animationDelay: particle.animationDelay,
+      transformOrigin: particle.transformOrigin
+    }"
+  ></div>
+  <main class="text-center max-w-2xl mx-auto z-10">
+    <app-h1-title titleLabel="Moodies" />
+    <p class="text-xl mb-8 text-soft-green">
+      Votre espace personnel pour capturer vos pensées quotidiennes et nourrir
+      votre introspection.
+    </p>
+
+    <app-radialButton label="Commencez à écrire" (click)="navigate()" />
+    <section class="mt-16 text-sm text-soft-green z-10">
+      <p>Prenez un moment chaque jour pour vous connecter avec vous-même.</p>
+    </section>
+  </main>
+  <footer class="mt-16 text-sm text-soft-green z-10">
+    <p>&copy; 2024 Moodies. Tous droits réservés.</p>
+  </footer>
+</div>

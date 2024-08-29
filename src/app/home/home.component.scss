@@ -1,0 +1,32 @@
+h1,
+h2,
+button {
+  font-weight: 700;
+}
+
+p {
+  font-weight: 400;
+}
+
+.particle {
+  @apply absolute rounded-full  w-[12px] h-[12px];
+  background: rgba(255, 223, 150, 0.8);
+  animation: float ease-in-out infinite;
+  box-shadow: 0 0 12px rgba(255, 223, 150, 0.8),
+    0 0 24px rgba(255, 223, 150, 0.6), 0 0 36px rgba(255, 223, 150, 0.4);
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0) translateX(0);
+  }
+  25% {
+    transform: translateY(-20px) translateX(10px);
+  }
+  50% {
+    transform: translateY(-35px) translateX(-5px);
+  }
+  75% {
+    transform: translateY(-20px) translateX(15px);
+  }
+}

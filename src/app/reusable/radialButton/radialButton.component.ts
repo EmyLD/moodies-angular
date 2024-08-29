@@ -2,11 +2,11 @@ import { CommonModule } from '@angular/common';
 import { Component, Input } from '@angular/core';
 
 @Component({
-  selector: 'app-button',
+  selector: 'app-radialButton',
   standalone: true,
   imports: [CommonModule],
-  templateUrl: './button.component.html',
-  styleUrl: './button.component.scss',
+  templateUrl: './radialButton.component.html',
+  styleUrl: './radialButton.component.scss',
 })
 export class ButtonComponent {
   @Input() label: string = '';
