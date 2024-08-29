@@ -1,1 +1,18 @@
 /* You can add global styles to this file, and also import other style files */
+@font-face {
+  font-family: "KarlaRegular";
+  src: url("./assets/fonts/Karla-Regular.ttf");
+}
+
+@font-face {
+  font-family: "KarlaBold";
+  src: url("./assets/fonts/Karla-Bold.ttf");
+}
+
+body {
+  font-family: "KarlaRegular";
+}
+
+h1 {
+  font-family: "KarlaBold";
+}
