@@ -1,15 +1,14 @@
 import { Routes } from '@angular/router';
-import { AppComponent } from './app.component';
 import { ProfilComponent } from './profil/profil.component';
 import { HomeComponent } from './home/home.component';
 
 export const routes: Routes = [
   {
-    path: '/',
+    path: '',
     component: HomeComponent,
   },
   {
-    path: '/profil',
+    path: 'profil',
     component: ProfilComponent,
   },
 ];
