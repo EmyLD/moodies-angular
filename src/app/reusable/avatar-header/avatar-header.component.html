@@ -1,8 +1,11 @@
-<section class="flex gap-y-6">
-  <article>
-    <div>
-      <img src="{{ url }}" />
-    </div>
-    <p>{{ name }}</p>
+<article
+  class="flex gap-x-6 w-full border border-darker-pink rounded-md p-4 hover:border-gold"
+>
+  <div>
+    <img src="{{ url }}" class="inline-block size-40 rounded-full" />
+  </div>
+  <article class="flex flex-col justify-evenly">
+    <app-h2-title titleLabel="{{ name }}" />
+    <app-subcaption text="{{ text }}" />
   </article>
-</section>
+</article>
