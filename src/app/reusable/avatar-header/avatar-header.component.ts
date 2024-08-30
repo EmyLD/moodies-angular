@@ -2,11 +2,17 @@ import { CommonModule } from '@angular/common';
 import { Component, Input } from '@angular/core';
 import { H2TitleComponent } from '../h2-title/h2-title.component';
 import { SubcaptionComponent } from '../subcaption/subcaption.component';
+import { AvatarComponent } from '../avatar/avatar.component';
 
 @Component({
   selector: 'app-avatar-header',
   standalone: true,
-  imports: [CommonModule, H2TitleComponent, SubcaptionComponent],
+  imports: [
+    CommonModule,
+    H2TitleComponent,
+    SubcaptionComponent,
+    AvatarComponent,
+  ],
   templateUrl: './avatar-header.component.html',
   styleUrl: './avatar-header.component.scss',
 })
