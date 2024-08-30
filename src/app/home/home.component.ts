@@ -16,7 +16,7 @@ export class HomeComponent {
     left: `${Math.random() * 100}%`,
     top: `${Math.random() * 100}%`,
     animationDuration: `10s`,
-    animationDelay: `${Math.random() * 5}s`, // délais pour que les particules ne se déplacent pas toutes en même temps
+    animationDelay: `${Math.random() * 5000}ms`, // délais pour que les particules ne se déplacent pas toutes en même temps
     transformOrigin: `${Math.random() * 100}% ${Math.random() * 100}%`,
   }));
 

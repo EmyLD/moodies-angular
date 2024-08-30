@@ -24,6 +24,7 @@ body {
   flex-direction: column;
   justify-content: space-evenly;
   margin: 0;
+  background-color: rgb(252, 252, 252, 0.8);
 }
 
 header {
@@ -43,5 +44,5 @@ footer {
 }
 
 .borderProfilContainer {
-  @apply border border-darker-pink rounded-md p-4 hover:border-gold;
+  @apply border border-darker-pink rounded-md p-4 hover:border-gold bg-white;
 }
