@@ -1,1 +1,16 @@
-<router-outlet></router-outlet>
+<ng-container *ngIf="isShown">
+  <header>
+    <!-- Contenu du header -->
+    Header content
+  </header>
+</ng-container>
+<main class="grid lg:grid-cols-12">
+  <section class="lg:col-start-4 lg:col-end-10">
+    <router-outlet></router-outlet>
+  </section>
+</main>
+<ng-container *ngIf="isShown">
+  <footer class="mt-16 text-sm text-soft-green z-10">
+    <p>&copy; 2024 Moodies. Tous droits réservés.</p>
+  </footer>
+</ng-container>

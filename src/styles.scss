@@ -13,10 +13,31 @@
   src: url("./assets/fonts/Karla-Bold.ttf");
 }
 
+html {
+  height: 100%;
+}
+
 body {
   font-family: "KarlaRegular";
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+  justify-content: space-evenly;
+  margin: 0;
+}
+
+header {
+  flex: 0 0 auto;
 }
 
 h1 {
   font-family: "KarlaBold";
+}
+
+main {
+  flex: 1 0 auto;
+}
+
+footer {
+  flex: 0 0 auto;
 }
