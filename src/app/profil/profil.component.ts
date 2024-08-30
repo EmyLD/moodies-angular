@@ -1,12 +1,11 @@
 import { Component } from '@angular/core';
+import { AvatarHeaderComponent } from '../reusable/avatar-header/avatar-header.component';
 
 @Component({
   selector: 'app-profil',
   standalone: true,
-  imports: [],
+  imports: [AvatarHeaderComponent],
   templateUrl: './profil.component.html',
-  styleUrl: './profil.component.scss'
+  styleUrl: './profil.component.scss',
 })
-export class ProfilComponent {
-
-}
+export class ProfilComponent {}
