@@ -41,3 +41,7 @@ main {
 footer {
   flex: 0 0 auto;
 }
+
+.borderProfilContainer {
+  @apply border border-darker-pink rounded-md p-4 hover:border-gold;
+}
