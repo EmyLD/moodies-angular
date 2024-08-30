@@ -1,9 +1,9 @@
 <article
   *ngFor="let entry of diaryEntry"
-  class="flex flex-wrap justify-between items-center"
+  class="flex gap-x-3 justify-between items-center"
 >
-  <app-subcaption text="{{ entry.date }}" />
-  <p>{{ entry.title }}</p>
+  <app-subcaption text="{{ entry.date }}" class="w-[25%]" />
+  <p class="w-[50%]">{{ entry.title }}</p>
   <button
     class="rounded-md border py-2 px-4 border-soft-green text-soft-green hover:bg-light-green hover:border-dark-green hover:text-dark-green transition-colors duration-300"
   >
