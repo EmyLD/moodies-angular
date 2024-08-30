@@ -1,4 +1,4 @@
-export const diaryEntriesHistory = [
+export const diaryEntryDetails = [
   {
     date: '2023-06-07',
     title: 'Une journée productive',

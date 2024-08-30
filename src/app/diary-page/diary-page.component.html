@@ -1,1 +1,37 @@
-<p>diary-page works!</p>
+<div class="max-w-2xl mx-auto">
+  <button
+    class="mb-4 text-dark-green hover:text-darker-pink flex items-center"
+    (click)="navigate()"
+  >
+    <svg
+      class="mr-2 h-4 w-4"
+      xmlns="http://www.w3.org/2000/svg"
+      fill="none"
+      viewBox="0 0 24 24"
+      stroke="currentColor"
+      aria-hidden="true"
+    >
+      <path
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="2"
+        d="M15 19l-7-7 7-7"
+      />
+    </svg>
+    Retour
+  </button>
+
+  <div
+    class="border border-darker-pink rounded-lg shadow-md p-6 hover:border-gold"
+  >
+    <div class="flex flex-row items-center justify-between">
+      <div>
+        <app-h2-title titleLabel="{{ title }}" />
+        <app-subcaption text="{{ date }}" />
+      </div>
+    </div>
+    <div class="prose prose-sm max-w-none mt-4">
+      <p class="mb-4 text-gray-700">{{ content }}</p>
+    </div>
+  </div>
+</div>
