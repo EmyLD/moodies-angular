@@ -3,6 +3,7 @@ import { SubcaptionComponent } from '../subcaption/subcaption.component';
 import { diaryEntriesHistory } from '../../../datas/diaryEntriesHistory';
 import { CommonModule } from '@angular/common';
 import { Entries } from '../../../utils/definition';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-diary-entry-input',
@@ -13,4 +14,9 @@ import { Entries } from '../../../utils/definition';
 })
 export class DiaryEntryInputComponent {
   @Input() diaryEntry: Array<Entries> = diaryEntriesHistory;
+  constructor(private router: Router) {}
+
+  navigate(value: string) {
+    this.router.navigate(['/profil/' + value]);
+  }
 }

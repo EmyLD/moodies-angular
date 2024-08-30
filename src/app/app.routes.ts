@@ -1,6 +1,7 @@
 import { Routes } from '@angular/router';
 import { ProfilComponent } from './profil/profil.component';
 import { HomeComponent } from './home/home.component';
+import { DiaryPageComponent } from './diary-page/diary-page.component';
 
 export const routes: Routes = [
   {
@@ -10,5 +11,9 @@ export const routes: Routes = [
   {
     path: 'profil',
     component: ProfilComponent,
+  },
+  {
+    path: 'profil/:title',
+    component: DiaryPageComponent,
   },
 ];
