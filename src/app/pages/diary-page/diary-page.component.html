@@ -25,13 +25,19 @@
     class="border border-darker-pink rounded-lg shadow-md p-6 hover:border-gold"
   >
     <div class="flex flex-row items-center justify-between">
-      <div>
-        <app-h2-title titleLabel="{{ title }}" />
+      <section>
+        <div>
+          <app-h2-title titleLabel="{{ title }}" />
+          <div class="space-x-3 mb-3 lg:mb-0">
+            <app-button [icon]="iconPen" />
+            <app-button [icon]="iconTrash" />
+          </div>
+        </div>
         <app-subcaption text="{{ date }}" />
-      </div>
+      </section>
     </div>
-    <div class="prose prose-sm max-w-none mt-4">
+    <section class="prose prose-sm max-w-none mt-4">
       <p class="mb-4 text-gray-700">{{ content }}</p>
-    </div>
+    </section>
   </div>
 </div>

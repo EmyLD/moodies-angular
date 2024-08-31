@@ -3,15 +3,27 @@ import { diaryEntryDetails } from '../../lib/datas/diaryEntryDetail';
 import { ActivatedRoute, Router } from '@angular/router';
 import { H2TitleComponent } from '../../components/h2-title/h2-title.component';
 import { SubcaptionComponent } from '../../components/subcaption/subcaption.component';
+import { DiaryEntryInputComponent } from '../../components/diary-entry-input/diary-entry-input.component';
+import { ButtonComponent } from '../../components/button/button.component';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { faPenToSquare, faTrashCan } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-diary-page',
   standalone: true,
-  imports: [H2TitleComponent, SubcaptionComponent],
+  imports: [
+    H2TitleComponent,
+    SubcaptionComponent,
+    DiaryEntryInputComponent,
+    ButtonComponent,
+    FontAwesomeModule,
+  ],
   templateUrl: './diary-page.component.html',
   styleUrl: './diary-page.component.scss',
 })
 export class DiaryPageComponent {
+  iconPen = faPenToSquare;
+  iconTrash = faTrashCan;
   oneEntryDetail = diaryEntryDetails;
   title: string | null = '';
   content: string = '';
@@ -22,7 +34,6 @@ export class DiaryPageComponent {
   ngOnInit(): void {
     this.route.paramMap.subscribe((params) => {
       this.title = params.get('title');
-      console.log(this.title);
     });
 
     if (this.title !== '') {
