@@ -1,5 +1,6 @@
+@for (particle of particles ; track particles) {
+
 <div
-  *ngFor="let particle of particles"
   class="particle -z-10"
   [ngStyle]="{
     left: particle.left,
@@ -21,3 +22,4 @@
     <p>Prenez un moment chaque jour pour vous connecter avec vous-même.</p>
   </article>
 </section>
+}

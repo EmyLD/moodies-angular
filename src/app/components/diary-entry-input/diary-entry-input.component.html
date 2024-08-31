@@ -1,7 +1,6 @@
-<article
-  *ngFor="let entry of diaryEntry"
-  class="flex gap-x-3 justify-between items-center"
->
+@for (entry of diaryEntry; track entry) {
+
+<article class="flex gap-x-3 justify-between items-center">
   <app-subcaption text="{{ entry.date }}" class="w-[25%]" />
   <p class="w-[50%]">{{ entry.title }}</p>
   <button
@@ -11,3 +10,4 @@
     Lire
   </button>
 </article>
+}
