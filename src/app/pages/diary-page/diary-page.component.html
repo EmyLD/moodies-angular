@@ -1,7 +1,7 @@
 <div class="max-w-2xl mx-auto">
   <button
     class="mb-4 text-dark-green hover:text-darker-pink flex items-center"
-    (click)="navigate()"
+    click="navigate()"
   >
     <svg
       class="mr-2 h-4 w-4"
@@ -28,9 +28,9 @@
       <section>
         <div>
           <app-h2-title titleLabel="{{ title }}" />
-          <div class="space-x-3 mb-3 lg:mb-0">
+          <div class="space-x-3 mb-3 lg:m">
             <app-button [icon]="iconPen" />
-            <app-button [icon]="iconTrash" />
+            <app-button [icon]="iconTrash" (click)="onClick()" />
           </div>
         </div>
         <app-subcaption text="{{ date }}" />

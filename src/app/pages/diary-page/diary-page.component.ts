@@ -50,6 +50,10 @@ export class DiaryPageComponent {
     }
   }
 
+  onClick() {
+    console.log('click');
+  }
+
   navigate() {
     if (this.route) {
       this.router.navigate(['/profil']);
