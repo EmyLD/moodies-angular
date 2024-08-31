@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { H1TitleComponent } from '../reusable/h1-title/h1-title.component';
-import { ButtonComponent } from '../reusable/radialButton/radialButton.component';
+import { H1TitleComponent } from '../../components/h1-title/h1-title.component';
+import { ButtonComponent } from '../../components/radialButton/radialButton.component';
 import { CommonModule } from '@angular/common';
 
 @Component({

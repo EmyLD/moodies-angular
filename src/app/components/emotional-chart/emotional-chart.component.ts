@@ -1,7 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
-import { ChartOptions, EmotionalLabel } from '../../../utils/definition';
-import { emotionalLabel } from '../../../datas/emotionalLabel';
+import { ChartOptions, EmotionalLabel } from '../../lib/utils/definition';
+import { emotionalLabel } from '../../lib/datas/emotionalLabel';
 import { NgApexchartsModule } from 'ng-apexcharts';
 
 @Component({

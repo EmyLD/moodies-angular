@@ -1,8 +1,8 @@
 import { Component, Input } from '@angular/core';
 import { SubcaptionComponent } from '../subcaption/subcaption.component';
-import { diaryEntriesHistory } from '../../../datas/diaryEntriesHistory';
+import { diaryEntriesHistory } from '../../lib/datas/diaryEntriesHistory';
 import { CommonModule } from '@angular/common';
-import { Entries } from '../../../utils/definition';
+import { Entries } from '../../lib/utils/definition';
 import { Router } from '@angular/router';
 
 @Component({
