@@ -8,6 +8,12 @@ import {
   ApexTitleSubtitle,
 } from 'ng-apexcharts';
 
+export interface UserModel {
+  title: string;
+  username: string;
+  emoji: string;
+}
+
 export type Entries = {
   title: string;
   date: string;

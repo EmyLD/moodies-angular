@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
@@ -12,12 +12,14 @@ import { Router } from '@angular/router';
 export class ButtonComponent {
   @Input() label: string = '';
   @Input() route: string = '';
+  @Input() type: string = '';
+  @Output() click = new EventEmitter<void>();
 
   constructor(private router: Router) {}
 
-  navigate() {
-    if (this.route) {
-      this.router.navigate([this.route]);
-    }
-  }
+  // navigate() {
+  //   if (this.route) {
+  //     this.router.navigate([this.route]);
+  //   }
+  // }
 }

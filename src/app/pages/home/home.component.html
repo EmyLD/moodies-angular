@@ -18,7 +18,37 @@
     votre introspection.
   </p>
 
-  <app-radialButton label="Commencez à écrire" route="profil" />
+  @if (!userInLocalStorage) {
+  <section class="borderProfilContainer">
+    <app-h2-title titleLabel="Indique ton nom 😌" />
+    <form class="form" [formGroup]="profileForm" (ngSubmit)="onSubmit()">
+      <label for="first-name">Prénom: </label>
+      <input
+        id="first-name"
+        type="text"
+        formControlName="firstName"
+        class="input"
+      />
+      <label for="last-name">Nom: </label>
+      <input
+        id="last-name"
+        type="text"
+        formControlName="lastName"
+        class="input"
+      />
+      <button type="submit">M'enregistrer</button>
+    </form>
+  </section>
+  } @else {
+  <app-radialButton
+    class="homeBtn"
+    type="submit"
+    label="Accéder à mon journal"
+    route="profil"
+    (click)="onClick()"
+  />
+  }
+
   <article class="mt-16 text-sm text-dark-green z-10">
     <p>Prenez un moment chaque jour pour vous connecter avec vous-même.</p>
   </article>

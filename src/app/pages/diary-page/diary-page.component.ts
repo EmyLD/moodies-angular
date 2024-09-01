@@ -50,8 +50,17 @@ export class DiaryPageComponent {
     }
   }
 
-  onClick() {
-    console.log('click');
+  onClickModify(value: string | null) {
+    let getTitle = this.oneEntryDetail.find(
+      (entry) => entry.title === this.title
+    );
+    if (getTitle) {
+      this.title = 'coucou';
+    }
+  }
+
+  onClickDelete() {
+    console.log('delete');
   }
 
   navigate() {

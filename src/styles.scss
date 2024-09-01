@@ -45,3 +45,11 @@ footer {
 .borderProfilContainer {
   @apply border border-darker-pink rounded-md p-4 hover:border-gold;
 }
+
+.form {
+  @apply flex flex-col gap-y-5;
+}
+
+.input {
+  @apply border border-gold/25 h-10 rounded-xl;
+}

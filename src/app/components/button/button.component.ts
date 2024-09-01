@@ -1,5 +1,11 @@
 import { CommonModule } from '@angular/common';
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+import {
+  Component,
+  EventEmitter,
+  Input,
+  Output,
+  OutputEmitterRef,
+} from '@angular/core';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { IconDefinition } from '@fortawesome/free-solid-svg-icons';
 
@@ -16,6 +22,7 @@ export class ButtonComponent {
   @Input() label: string = '';
 
   @Output() click = new EventEmitter<void>();
+
   handleClick() {
     this.click.emit(); // Émettre l'événement lors du clic
   }
