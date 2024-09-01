@@ -22,8 +22,9 @@
   <section class="borderProfilContainer">
     <form class="form" [formGroup]="profileForm" (ngSubmit)="onSubmit()">
       <label for="username"
-        ><app-h2-title titleLabel="Indique ton nom 😌"
+        ><app-h2-title titleLabel="Indiquez votre nom 😌"
       /></label>
+
       <input
         id="username"
         type="text"
@@ -36,6 +37,9 @@
       @if(this.isInvalid) {
       <p class="error">{{ errorMessage }}</p>
       }
+      <em class="text-muted"
+        >Le nom choisi sera celui affiché sur votre profil</em
+      >
       <button type="submit">M'enregistrer</button>
     </form>
   </section>

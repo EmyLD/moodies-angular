@@ -70,6 +70,12 @@ export class HomeComponent {
       console.log(this.isInvalid);
     } else {
       this.isInvalid = false;
+      this.profileForm.value.username &&
+        window.localStorage.setItem(
+          'username',
+          this.profileForm.value.username
+        );
+      this.router.navigate(['/profil']);
     }
     console.log('submit btn clicked : ', this.profileForm.status);
   }

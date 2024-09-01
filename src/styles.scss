@@ -61,3 +61,7 @@ footer {
 .error {
   @apply border-error-200 bg-error-200 text-error-900 w-full rounded-md py-2;
 }
+
+.text-muted {
+  @apply text-blue-gray-300 text-[12px] text-left;
+}
