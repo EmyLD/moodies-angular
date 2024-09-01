@@ -68,8 +68,12 @@ export class HomeComponent {
   onSubmit() {
     if (this.profileForm.status === 'INVALID') {
       this.isInvalid = true;
-      this.errorMessage = 'Les symboles et les chiffres sont interdits';
-      console.log(this.isInvalid);
+      const usernameError = this.profileForm.controls['username'].errors;
+      if (usernameError && usernameError['forbiddenName']) {
+        this.errorMessage = 'Seuls les lettres et chiffres sont acceptés.';
+      } else {
+        this.errorMessage = 'Le champs est obligatoire.';
+      }
     } else {
       this.isInvalid = false;
       this.profileForm.value.username &&
@@ -79,6 +83,5 @@ export class HomeComponent {
         );
       this.router.navigate(['/profil']);
     }
-    console.log('submit btn clicked : ', this.profileForm.status);
   }
 }
