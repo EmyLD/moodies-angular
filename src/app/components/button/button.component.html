@@ -1,11 +1,9 @@
 <button
-  (click)="handleClick()"
   class="rounded-md border py-2 px-4 border-dark-green text-dark-green hover:bg-light-green hover:border-soft-green hover:text-soft-green transition-colors duration-300"
 >
   @if (icon != undefined) {
   <fa-icon [icon]="icon"></fa-icon>
-  } @if (label != '') {
-
+  } @else if (label != '') {
   <span>
     {{ label }}
   </span>

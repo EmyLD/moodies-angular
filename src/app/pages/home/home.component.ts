@@ -1,6 +1,6 @@
 import { Component, ElementRef, Renderer2, ViewChild } from '@angular/core';
 import { H1TitleComponent } from '../../components/h1-title/h1-title.component';
-import { ButtonComponent } from '../../components/radialButton/radialButton.component';
+import { RadialButtonComponent } from '../../components/radialButton/radialButton.component';
 import { CommonModule } from '@angular/common';
 import { Router } from '@angular/router';
 import { H2TitleComponent } from '../../components/h2-title/h2-title.component';
@@ -11,16 +11,18 @@ import {
   Validators,
 } from '@angular/forms';
 import { forbiddenNameValidator } from '../../lib/utils/formCustomValidator';
+import { ButtonComponent } from '../../components/button/button.component';
 
 @Component({
   selector: 'app-home',
   standalone: true,
   imports: [
     CommonModule,
-    ButtonComponent,
+    RadialButtonComponent,
     H1TitleComponent,
     H2TitleComponent,
     ReactiveFormsModule,
+    ButtonComponent,
   ],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss',

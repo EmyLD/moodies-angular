@@ -13,7 +13,7 @@
 }
 <section class="text-center mx-auto z-30 lg:col-start-6 my-60">
   <app-h1-title titleLabel="Moodies" />
-  <p class="text-xl my-8 text-darker-green">
+  <p class="text-xl my-8 text-dark-green">
     Votre espace personnel pour capturer vos pensées quotidiennes et nourrir
     votre introspection.
   </p>
@@ -40,18 +40,10 @@
       <em class="text-muted"
         >Le nom choisi sera celui affiché sur votre profil</em
       >
-      <button type="submit">M'enregistrer</button>
+      <app-radialButton label="M'enregister" class="homeBtn" />
     </form>
   </section>
-  } @else {
-  <app-radialButton
-    class="homeBtn"
-    type="submit"
-    label="Accéder à mon journal"
-    route="profil"
-    (click)="onClick()"
-  />
-  }
+  } @else { }
 
   <article class="mt-16 text-sm text-dark-green z-10">
     <p>Prenez un moment chaque jour pour vous connecter avec vous-même.</p>

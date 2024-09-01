@@ -9,7 +9,7 @@ import { Router } from '@angular/router';
   templateUrl: './radialButton.component.html',
   styleUrl: './radialButton.component.scss',
 })
-export class ButtonComponent {
+export class RadialButtonComponent {
   @Input() label: string = '';
   @Input() route: string = '';
   @Input() type: string = '';
