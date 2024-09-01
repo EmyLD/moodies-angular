@@ -3,6 +3,7 @@ import { AvatarHeaderComponent } from '../../components/avatar-header/avatar-hea
 import { EmotionalChartComponent } from '../../components/emotional-chart/emotional-chart.component';
 import { DiaryEntryInputComponent } from '../../components/diary-entry-input/diary-entry-input.component';
 import { H2TitleComponent } from '../../components/h2-title/h2-title.component';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-profil',
@@ -17,4 +18,14 @@ import { H2TitleComponent } from '../../components/h2-title/h2-title.component';
   templateUrl: './profil.component.html',
   styleUrl: './profil.component.scss',
 })
-export class ProfilComponent {}
+export class ProfilComponent {
+  username: string = '';
+  constructor(private router: Router) {}
+  ngOnInit() {
+    let hasUsername = window.localStorage.getItem('username');
+    this.username = hasUsername ?? this.username;
+    if (!hasUsername) {
+      this.router.navigate(['/']);
+    }
+  }
+}
