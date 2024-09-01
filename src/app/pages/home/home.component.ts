@@ -10,7 +10,6 @@ import {
   ReactiveFormsModule,
   Validators,
 } from '@angular/forms';
-import { UserModel } from '../../lib/utils/definition';
 import { forbiddenNameValidator } from '../../lib/utils/formCustomValidator';
 
 @Component({
@@ -28,10 +27,16 @@ import { forbiddenNameValidator } from '../../lib/utils/formCustomValidator';
 })
 export class HomeComponent {
   userInLocalStorage: boolean = true;
+  isInvalid: boolean = false;
+  errorMessage: string = '';
+  successMessage: string = '';
 
   profileForm = new FormGroup({
-    firstName: new FormControl(''),
-    lastName: new FormControl(''),
+    username: new FormControl('', [
+      Validators.required,
+      Validators.minLength(3),
+      forbiddenNameValidator(/[^A-Za-z\s]/),
+    ]),
   });
 
   constructor(private router: Router) {}
@@ -59,6 +64,13 @@ export class HomeComponent {
   }
 
   onSubmit() {
-    console.log('submit btn clicked : ', this.profileForm.value.firstName);
+    if (this.profileForm.status === 'INVALID') {
+      this.isInvalid = true;
+      this.errorMessage = 'Les symboles et les chiffres sont interdits';
+      console.log(this.isInvalid);
+    } else {
+      this.isInvalid = false;
+    }
+    console.log('submit btn clicked : ', this.profileForm.status);
   }
 }

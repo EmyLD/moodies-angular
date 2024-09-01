@@ -53,3 +53,11 @@ footer {
 .input {
   @apply border border-gold/25 h-10 rounded-xl;
 }
+
+.success {
+  @apply border-success-200 bg-success-200 text-success-900 w-full rounded-md;
+}
+
+.error {
+  @apply border-error-200 bg-error-200 text-error-900 w-full rounded-md py-2;
+}
