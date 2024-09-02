@@ -6,8 +6,9 @@ import { RouterModule } from '@angular/router';
   selector: 'app-nav-link',
   standalone: true,
   imports: [CommonModule, RouterModule],
-  templateUrl: './nav-link.component.html',
-  styleUrl: './nav-link.component.scss',
+  template: `<li class="text-dark-green">
+    <a [routerLink]="link">{{ linkLabel }}</a>
+  </li> `,
 })
 export class NavLinkComponent {
   @Input() link: string = '';

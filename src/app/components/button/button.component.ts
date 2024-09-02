@@ -13,8 +13,19 @@ import { IconDefinition } from '@fortawesome/free-solid-svg-icons';
   selector: 'app-button',
   standalone: true,
   imports: [CommonModule, FontAwesomeModule],
-  templateUrl: './button.component.html',
-  styleUrl: './button.component.scss',
+  template: `
+    <button
+      class="rounded-md border py-2 px-4 border-dark-green text-dark-green hover:bg-light-green hover:border-soft-green hover:text-soft-green transition-colors duration-300"
+    >
+      @if (icon != undefined) {
+      <fa-icon [icon]="icon"></fa-icon>
+      } @else if (label != '') {
+      <span>
+        {{ label }}
+      </span>
+      }
+    </button>
+  `,
 })
 export class ButtonComponent {
   @Input() icon: IconDefinition | undefined = undefined;

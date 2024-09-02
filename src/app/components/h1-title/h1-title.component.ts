@@ -5,8 +5,7 @@ import { Component, Input } from '@angular/core';
   selector: 'app-h1-title',
   standalone: true,
   imports: [CommonModule],
-  templateUrl: './h1-title.component.html',
-  styleUrl: './h1-title.component.scss',
+  template: `<h1 class="text-5xl mb-4 text-light-pink">{{ titleLabel }}</h1> `,
 })
 export class H1TitleComponent {
   @Input() titleLabel: string = '';

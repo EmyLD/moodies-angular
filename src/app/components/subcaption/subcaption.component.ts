@@ -5,9 +5,10 @@ import { Component, Input } from '@angular/core';
   selector: 'app-subcaption',
   standalone: true,
   imports: [CommonModule],
-  templateUrl: './subcaption.component.html',
-  styleUrl: './subcaption.component.scss',
+  template: ` <p class="subcaption">
+    {{ text }}
+  </p>`,
 })
 export class SubcaptionComponent {
-  @Input() text: string = ''; // Input property to receive text
+  @Input() text: string = '';
 }

@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { diaryEntryDetails } from '../../lib/datas/diaryEntryDetail';
+import { diaryEntryDetails } from '../../../datas/diaryEntryDetail';
 import { ActivatedRoute, Router } from '@angular/router';
 import { H2TitleComponent } from '../../components/h2-title/h2-title.component';
 import { SubcaptionComponent } from '../../components/subcaption/subcaption.component';

@@ -9,7 +9,7 @@ import {
   faPenToSquare,
   faSquareCheck,
 } from '@fortawesome/free-solid-svg-icons';
-import { onClickModifyUsername } from '../../lib/utils/modifyEntry';
+import { onClickModifyUsername } from '../../../utils/modifyEntry';
 import { FormsModule } from '@angular/forms';
 
 @Component({
@@ -24,8 +24,32 @@ import { FormsModule } from '@angular/forms';
     ButtonComponent,
     FormsModule,
   ],
-  templateUrl: './avatar-header.component.html',
-  styleUrl: './avatar-header.component.scss',
+  template: `
+    <article class="flex gap-x-6 w-full borderProfilContainer">
+      <app-avatar url="{{ url }}" />
+      <article class="flex flex-col justify-evenly">
+        <section>
+          @if(hasClickedModifyBtn) {
+          <app-h2-title [titleLabel]="username" />
+          <article class="flex">
+            <input
+              [(ngModel)]="username"
+              placeholder="newname"
+              class="py-2"
+              name="username"
+            />
+            <app-button [icon]="iconOk" />
+          </article>
+          } @else {
+          <app-h2-title titleLabel="{{ name }}" />
+          <app-button [icon]="iconPen" (click)="onClickModify(name)" />
+          }
+        </section>
+
+        <app-subcaption text="{{ text }}" />
+      </article>
+    </article>
+  `,
 })
 export class AvatarHeaderComponent {
   hasClickedModifyBtn: boolean = false;

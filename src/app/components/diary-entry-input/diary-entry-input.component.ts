@@ -1,8 +1,8 @@
 import { Component, Input } from '@angular/core';
 import { SubcaptionComponent } from '../subcaption/subcaption.component';
-import { diaryEntriesHistory } from '../../lib/datas/diaryEntriesHistory';
+import { diaryEntriesHistory } from '../../../datas/diaryEntriesHistory';
 import { CommonModule } from '@angular/common';
-import { Entries } from '../../lib/utils/definition';
+import { Entries } from '../../../utils/definition';
 import { Router } from '@angular/router';
 import { ButtonComponent } from '../button/button.component';
 
@@ -10,8 +10,14 @@ import { ButtonComponent } from '../button/button.component';
   selector: 'app-diary-entry-input',
   standalone: true,
   imports: [SubcaptionComponent, CommonModule, ButtonComponent],
-  templateUrl: './diary-entry-input.component.html',
-  styleUrl: './diary-entry-input.component.scss',
+  template: `@for (entry of diaryEntry; track entry) {
+
+    <article class="flex gap-x-3 justify-between items-center">
+      <app-subcaption text="{{ entry.date }}" class="w-[25%]" />
+      <p class="w-[50%]">{{ entry.title }}</p>
+      <app-button label="Lire" (click)="navigate(entry.title)" />
+    </article>
+    } `,
 })
 export class DiaryEntryInputComponent {
   @Input() diaryEntry: Array<Entries> = diaryEntriesHistory;

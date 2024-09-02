@@ -1,8 +1,0 @@
-@for (entry of diaryEntry; track entry) {
-
-<article class="flex gap-x-3 justify-between items-center">
-  <app-subcaption text="{{ entry.date }}" class="w-[25%]" />
-  <p class="w-[50%]">{{ entry.title }}</p>
-  <app-button label="Lire" (click)="navigate(entry.title)" />
-</article>
-}
