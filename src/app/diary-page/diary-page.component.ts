@@ -1,10 +1,10 @@
 import { Component } from '@angular/core';
-import { diaryEntryDetails } from '../../../datas/diaryEntryDetail';
+import { diaryEntryDetails } from '../../datas/diaryEntryDetail';
 import { ActivatedRoute, Router } from '@angular/router';
-import { H2TitleComponent } from '../../components/h2-title/h2-title.component';
-import { SubcaptionComponent } from '../../components/subcaption/subcaption.component';
-import { DiaryEntryInputComponent } from '../../components/diary-entry-input/diary-entry-input.component';
-import { ButtonComponent } from '../../components/button/button.component';
+import { H2TitleComponent } from '../components/h2-title/h2-title.component';
+import { SubcaptionComponent } from '../components/subcaption/subcaption.component';
+import { DiaryEntryInputComponent } from '../components/diary-entry-input/diary-entry-input.component';
+import { ButtonComponent } from '../components/button/button.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { faPenToSquare, faTrashCan } from '@fortawesome/free-solid-svg-icons';
 
@@ -19,7 +19,6 @@ import { faPenToSquare, faTrashCan } from '@fortawesome/free-solid-svg-icons';
     FontAwesomeModule,
   ],
   templateUrl: './diary-page.component.html',
-  styleUrl: './diary-page.component.scss',
 })
 export class DiaryPageComponent {
   iconPen = faPenToSquare;

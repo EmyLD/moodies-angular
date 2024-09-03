@@ -9,7 +9,7 @@ import {
   faPenToSquare,
   faSquareCheck,
 } from '@fortawesome/free-solid-svg-icons';
-import { onClickModifyUsername } from '../../../utils/modifyEntry';
+import { modifyLocalStorageValue } from '../../../utils/modifyEntry';
 import { FormsModule } from '@angular/forms';
 
 @Component({
@@ -55,12 +55,12 @@ export class AvatarHeaderComponent {
   hasClickedModifyBtn: boolean = false;
   iconPen = faPenToSquare;
   iconOk = faSquareCheck;
-  username: string = 'Initial Name';
+  username: string = '';
   @Input() name: string = '';
   @Input() url: string = '';
   @Input() text: string = '';
   onClickModify(value: string) {
     this.hasClickedModifyBtn = true;
-    onClickModifyUsername('username', 'value');
+    modifyLocalStorageValue('username', value);
   }
 }

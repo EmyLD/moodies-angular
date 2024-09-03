@@ -25,7 +25,6 @@ import { ButtonComponent } from '../components/button/button.component';
     ButtonComponent,
   ],
   templateUrl: './home.component.html',
-  styleUrl: './home.component.scss',
 })
 export class HomeComponent {
   userInLocalStorage: boolean = true;

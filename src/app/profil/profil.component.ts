@@ -14,7 +14,16 @@ import { ButtonComponent } from '../components/button/button.component';
     H2TitleComponent,
     ButtonComponent,
   ],
-  templateUrl: './profil.component.html',
+  template: `<app-avatar-header
+      name="{{ username }}"
+      url="https://avatar.iran.liara.run/public/67"
+      text="L'éternel mélancolique 🌙"
+    />
+
+    <section class="borderProfilContainer mt-3 lg:mt-10">
+      <app-h2-title titleLabel="Historique du Journal" />
+      <app-diary-entry-input class="space-y-4" />
+    </section>`,
   styleUrl: './profil.component.scss',
 })
 export class ProfilComponent {
