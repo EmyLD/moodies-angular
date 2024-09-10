@@ -1,21 +1,20 @@
 import { Routes } from '@angular/router';
-import { ProfilComponent } from './profil/profil.component';
 import { HomeComponent } from './home/home.component';
-import { DiaryPageComponent } from './diary-page/diary-page.component';
 import { redirectIfAuthenticatedGuard } from '../infra/guard/redirect-if-authenticated.guard';
 
 export const routes: Routes = [
   {
     path: '',
+    pathMatch: 'full',
     component: HomeComponent,
-    canActivate: [redirectIfAuthenticatedGuard],
+    canMatch: [redirectIfAuthenticatedGuard],
   },
   {
     path: 'profil',
-    component: ProfilComponent,
+    loadComponent: () => import('./profil/profil.component'),
   },
   {
     path: 'profil/:title',
-    component: DiaryPageComponent,
+    loadComponent: () => import('./diary-page/diary-page.component'),
   },
 ];

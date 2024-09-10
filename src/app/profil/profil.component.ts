@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { AvatarHeaderComponent } from '../components/avatar-header/avatar-header.component';
 import { DiaryEntryInputComponent } from '../components/diary-entry-input/diary-entry-input.component';
 import { H2TitleComponent } from '../components/h2-title/h2-title.component';
@@ -26,7 +26,7 @@ import { ButtonComponent } from '../components/button/button.component';
     </section>`,
   styleUrl: './profil.component.scss',
 })
-export class ProfilComponent {
+export default class ProfilComponent implements OnInit {
   username: string = '';
   constructor(private router: Router) {}
   ngOnInit() {

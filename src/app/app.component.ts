@@ -1,8 +1,9 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, DestroyRef, inject, OnInit, signal } from '@angular/core';
 import { NavigationEnd, Router, RouterOutlet } from '@angular/router';
 import { filter } from 'rxjs/operators';
 import { HeaderComponent } from './components/header/header.component';
+import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 
 @Component({
   selector: 'app-root',
@@ -11,14 +12,18 @@ import { HeaderComponent } from './components/header/header.component';
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
 })
-export class AppComponent {
-  isShown: boolean = true;
+export class AppComponent implements OnInit {
+  isShown = signal(true);
 
-  constructor(private router: Router) {}
+  private router: Router = inject(Router);
+  private destroyRef: DestroyRef = inject(DestroyRef);
 
   ngOnInit() {
     this.router.events
-      .pipe(filter((event) => event instanceof NavigationEnd))
+      .pipe(
+        filter((event) => event instanceof NavigationEnd),
+        takeUntilDestroyed(this.destroyRef)
+      )
       .subscribe(() => {
         this.updateVisibility();
       });
@@ -29,10 +34,6 @@ export class AppComponent {
   private updateVisibility() {
     const url = this.router.url;
 
-    if (url === '/') {
-      this.isShown = false;
-    } else {
-      this.isShown = true;
-    }
+    this.isShown.set(url !== '/');
   }
 }

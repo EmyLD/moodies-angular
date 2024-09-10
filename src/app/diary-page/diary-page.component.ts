@@ -1,26 +1,19 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { diaryEntryDetails } from '../../datas/diaryEntryDetail';
 import { ActivatedRoute, Router } from '@angular/router';
 import { H2TitleComponent } from '../components/h2-title/h2-title.component';
 import { SubcaptionComponent } from '../components/subcaption/subcaption.component';
 import { DiaryEntryInputComponent } from '../components/diary-entry-input/diary-entry-input.component';
 import { ButtonComponent } from '../components/button/button.component';
-import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { faPenToSquare, faTrashCan } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-diary-page',
   standalone: true,
-  imports: [
-    H2TitleComponent,
-    SubcaptionComponent,
-    DiaryEntryInputComponent,
-    ButtonComponent,
-    FontAwesomeModule,
-  ],
+  imports: [H2TitleComponent, ButtonComponent, SubcaptionComponent],
   templateUrl: './diary-page.component.html',
 })
-export class DiaryPageComponent {
+export default class DiaryPageComponent implements OnInit {
   iconPen = faPenToSquare;
   iconTrash = faTrashCan;
   oneEntryDetail = diaryEntryDetails;
